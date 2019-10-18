@@ -19,6 +19,7 @@ int main()
 	cout << "#########\n" << endl;
 	testBezparm.v_mod_tab(&testBezparm, 3);
 	testBezparm.vShowSize();
+	cout << "TEST GIT" << endl;
 
 	system("pause");
 	return 0;
