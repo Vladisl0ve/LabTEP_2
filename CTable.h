@@ -7,13 +7,15 @@ class CTable
 public:
 	CTable();
 	CTable(string sName, int iTableLen);
-	CTable(CTable& pcOther);
+	CTable(const CTable& pcOther);
 	CTable* pcClone();
 
 	void vShowName();
 	void vShowSize();
 	void v_mod_tab(CTable* pcTab, int iNewSize);
 	void v_mod_tab(CTable cTab, int iNewSize);
+	void vSetValueAt(int iOffset, int iNewVal);
+	void vPrint();
 	~CTable();
 private:
 	int CONST_SIZE = 10;

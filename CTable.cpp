@@ -15,7 +15,7 @@ CTable::CTable(string s_Name, int iTableLen)
 	cout << "Parametr: " << sName << endl;
 }
 
-CTable::CTable(CTable& pcOther)
+CTable::CTable(const CTable& pcOther)
 {
 	sName = pcOther.sName + "_copy";
 	piTable = pcOther.piTable;
@@ -67,6 +67,23 @@ void CTable::v_mod_tab(CTable cTab, int iNewSize)
 {
 	cTab.bSetNewSize(iNewSize);
 	cout << "New "; cTab.vShowSize();
+}
+
+void CTable::vSetValueAt(int iOffset, int iNewVal)
+{
+	if (iOffset > iSize) {
+		cout << "Error" << endl;
+		return;
+	}
+	piTable[iOffset] = iNewVal;
+}
+
+void CTable::vPrint()
+{
+	for (int ii = 0; ii < iSize; ii++)
+	{
+		cout << ii << ": " << piTable[ii] << endl;
+	}
 }
 
 CTable::~CTable()
