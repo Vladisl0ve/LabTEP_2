@@ -68,3 +68,8 @@ void CTable::v_mod_tab(CTable cTab, int iNewSize)
 	cTab.bSetNewSize(iNewSize);
 	cout << "New "; cTab.vShowSize();
 }
+
+CTable::~CTable()
+{
+	cout << "Usuwam: " << sName << endl;
+}

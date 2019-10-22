@@ -14,6 +14,7 @@ public:
 	void vShowSize();
 	void v_mod_tab(CTable* pcTab, int iNewSize);
 	void v_mod_tab(CTable cTab, int iNewSize);
+	~CTable();
 private:
 	int CONST_SIZE = 10;
 	string CONST_NAME = "Default";
