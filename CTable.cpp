@@ -43,9 +43,9 @@ bool CTable::bSetNewSize(int iTableLen)
 	return true;
 }
 
-CTable* CTable::pcClone()
-{
-	return this;
+CTable* CTable::pcClone() {
+	CTable* copy = new CTable(sName, iSize);
+	return copy;
 }
 
 void CTable::vShowName()

@@ -11,7 +11,6 @@ int main()
 	cout << "#########\n" << endl;
 	CTable* pc_new_tab;
 	pc_new_tab = testBezparm.pcClone();
-	pc_new_tab->vShowName();
 	cout << "#########\n" << endl;
 	testBezparm.vShowSize();
 	testBezparm.v_mod_tab(testBezparm, 300);
