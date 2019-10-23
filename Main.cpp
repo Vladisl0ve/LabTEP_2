@@ -1,7 +1,13 @@
 #include <iostream>
 #include "CTable.h"
 
+/*TO DO:
+	1. Remove "waste-code" for testing
+	2. Add #pragma once (and read about that!)
+	3. Fix deallocating (add full-dealloc including nullptr)
+	4. Check all returns
 
+*/
 int main()
 {
 	CTable testBezparm;
