@@ -76,7 +76,7 @@ bool CTable::bCheckErr(int iCheackable)
 
 bool CTable::bCheckErrForNewTable(int iCheackable)
 {
-	if (!bCheckErr)
+	if (!bCheckErr(iCheackable))
 		return false;
 
 	if (iCheackable <= iSize)
