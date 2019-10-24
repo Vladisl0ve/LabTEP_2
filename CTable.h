@@ -12,6 +12,8 @@ public:
 
 	void vShowName();
 	void vShowSize();
+	bool bCheckErr(int iCheackable);
+	bool bCheckErrForNewTable(int iCheackable);
 	void v_mod_tab(CTable* pcTab, int iNewSize);
 	void v_mod_tab(CTable cTab, int iNewSize);
 	void vSetValueAt(int iOffset, int iNewVal);

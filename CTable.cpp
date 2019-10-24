@@ -29,16 +29,15 @@ void CTable::vSetName(string s_Name)
 
 bool CTable::bSetNewSize(int iTableLen)
 {
-	if (iTableLen <= 0)
-	{
-		cout << "Error, new size must be greater than 0" << endl;
+
+	if (!bCheckErrForNewTable(iTableLen))
 		return false;
-	}
 
 	int* pi_newTable = new int[iTableLen];
 	iSize = iTableLen;
 	piTable = pi_newTable;
 	delete pi_newTable;
+	pi_newTable = nullptr;
 
 	return true;
 }
@@ -58,21 +57,63 @@ void CTable::vShowSize()
 	cout << "Size: " << iSize << endl;
 }
 
+bool CTable::bCheckErr(int iCheackable)
+{
+	if (iCheackable < 0)
+	{
+		cout << "Error, new size must be greater than 0" << endl;
+		cout << iCheackable << " is less than zero" << endl;
+		return false;
+	}
+	if (iCheackable == 0)
+	{
+		cout << "Error, new size must be greater than 0" << endl;
+		cout << iCheackable << " is equal to zero" << endl;
+		return false;
+	}
+	return true;
+}
+
+bool CTable::bCheckErrForNewTable(int iCheackable)
+{
+	if (!bCheckErr)
+		return false;
+
+	if (iCheackable <= iSize)
+	{
+		cout << "Error, new size must be greater than previous size" << endl;
+		cout << iCheackable << " is less than previous size" << endl;
+		return false;
+	}
+	if (iCheackable == iSize)
+	{
+		cout << "Error, new size must be greater than previous size" << endl;
+		cout << iCheackable << " is equal to previous size" << endl;
+		return false;
+	}
+	return true;
+}
+
 void CTable::v_mod_tab(CTable* pcTab, int iNewSize)
 {
+	if (!bCheckErrForNewTable(iNewSize))
+		return;
+
 	pcTab->bSetNewSize(iNewSize);
 }
 
 void CTable::v_mod_tab(CTable cTab, int iNewSize)
 {
+	if (!bCheckErrForNewTable(iNewSize))
+		return;
 	cTab.bSetNewSize(iNewSize);
-	cout << "New "; cTab.vShowSize();
 }
 
 void CTable::vSetValueAt(int iOffset, int iNewVal)
 {
-	if (iOffset > iSize) {
-		cout << "Error" << endl;
+	if (iOffset >= iSize) {
+		cout << "Error, value must be less than table's size" << endl;
+		cout << iOffset << " is greater than table's size (or equal to)" << endl;
 		return;
 	}
 	piTable[iOffset] = iNewVal;
