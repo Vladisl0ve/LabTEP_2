@@ -10,8 +10,9 @@ CTable::CTable()
 
 CTable::CTable(string s_Name, int iTableLen)
 {
-	this->vSetName(s_Name);
-	this->bSetNewSize(iTableLen);
+	sName = s_Name;
+	piTable = new int[iTableLen];
+	iSize = iTableLen;
 	cout << "Parametr: " << sName << endl;
 }
 
@@ -36,9 +37,6 @@ bool CTable::bSetNewSize(int iTableLen)
 	int* pi_newTable = new int[iTableLen];
 	iSize = iTableLen;
 	piTable = pi_newTable;
-	delete pi_newTable;
-	pi_newTable = nullptr;
-
 	return true;
 }
 
@@ -130,4 +128,5 @@ void CTable::vPrint()
 CTable::~CTable()
 {
 	cout << "Usuwam: " << sName << endl;
+	delete piTable;
 }

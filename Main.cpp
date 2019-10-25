@@ -3,7 +3,7 @@
 
 /*TO DO:
 	DONE: 1. Remove "waste-code" for testing
-	DONE(half): 2. Add #pragma once (and read about that!)
+	DONE: 2. Add #pragma once (and read about that!)
 	DONE: 3. Fix deallocating (add full-dealloc including nullptr)
 	DONE: 4. Check all returns
 
@@ -22,12 +22,9 @@ int main()
 	testBezparm.v_mod_tab(testBezparm, 300);
 	testBezparm.vShowSize();
 	cout << "#########\n" << endl;
-	testBezparm.v_mod_tab(&testBezparm, 3);
+	testBezparm.v_mod_tab(&testBezparm, 50);
 	testBezparm.vShowSize();
 	cout << "#########\n" << endl;
-	testBezparm.~CTable();
-	testParm.~CTable();
-	testKopuj.~CTable();
 
 	system("pause");
 	return 0;

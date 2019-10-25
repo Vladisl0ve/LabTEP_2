@@ -10,6 +10,8 @@ public:
 	CTable(const CTable& pcOther);
 	CTable* pcClone();
 
+	void vSetName(string sName);
+	bool bSetNewSize(int iTableLen);
 	void vShowName();
 	void vShowSize();
 	bool bCheckErr(int iCheackable);
@@ -26,8 +28,6 @@ private:
 	string sName;
 	int* piTable;
 	int iSize;
-	void vSetName(string sName);
-	bool bSetNewSize(int iTableLen);
 
 
 };
