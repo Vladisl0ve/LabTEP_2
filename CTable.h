@@ -10,6 +10,11 @@ public:
 	CTable(const CTable& pcOther);
 	CTable* pcClone();
 
+	string sPassword = "defaultPassword";
+
+	bool isGoodPassword(string& tmpStr);
+	bool setPassword(string& tmpStr);
+
 	void vSetName(string sName);
 	bool bSetNewSize(int iTableLen);
 	void vShowName();
@@ -31,4 +36,3 @@ private:
 
 
 };
-
